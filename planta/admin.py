@@ -1,5 +1,8 @@
 from django.contrib import admin
-from .models import trabajador 
+from .models import Trabajador,Categoria,Produccion,Productos
 # Register your models here.
 
-admin.site.register(trabajador)
+admin.site.register(Trabajador)
+admin.site.register(Categoria)
+admin.site.register(Productos)
+admin.site.register(Produccion)
