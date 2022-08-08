@@ -2,6 +2,7 @@ from django import http
 from django.shortcuts import render
 from django.http import HttpResponse
 
+
 # Create your views here.
 def index(request):
     return render(request, 'planta/index.html')
@@ -40,3 +41,6 @@ def suma(request):
     r=int(n1)+int(n2)
 
     return HttpResponse (f'La suma de {n1} y {n2} es {r}')
+
+def edadTrabajador(request):
+    pass

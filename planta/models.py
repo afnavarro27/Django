@@ -1,16 +1,25 @@
 
+from datetime import date
 from pyexpat import model
 from statistics import mode
 from turtle import color
 from django.db import models
 
+
 # Create your models here.
 
 class Trabajador(models.Model):
-    cedula = models.IntegerField(max_length=200)
+    cedula = models.IntegerField()
     nombre = models.CharField(max_length=200)
     apellido= models.CharField(max_length=200)
-    correo=models.EmailField(max_length=250,null=True,blank=True)
+    fechaNacimiento = models.DateField()
+    correo = models.EmailField(max_length=250,null=True,blank=True)
+
+    def edad(self):
+        año = date.today()
+        fecha = self.fechaNacimiento
+        edad = fecha.year-año.year
+        return f'{edad}'
 
     def nombreCompleto(self):
         return f"{self.nombre} {self.apellido}"

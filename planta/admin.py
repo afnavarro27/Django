@@ -4,8 +4,9 @@ from .models import Trabajador,Categoria,Produccion,Productos
 
 @admin.register(Trabajador)
 class TrabajadorAdmin(admin.ModelAdmin):
-    list_display= ('id','cedula','nombre','apellido','correo','nombreCompleto')
+    list_display= ('id','cedula','nombre','apellido','correo','nombreCompleto','fechaNacimiento','edad')
     search_fields=['nombre','id','cedula']
+    list_editable = ['fechaNacimiento']
 
 
 @admin.register(Productos)
