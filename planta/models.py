@@ -1,8 +1,5 @@
 
 from datetime import date
-from pyexpat import model
-from statistics import mode
-from turtle import color
 from django.db import models
 
 
