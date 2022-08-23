@@ -1,0 +1,45 @@
+{% extends "planta/base.html" %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {%block contenedor%}
+    <form action="{% url 'planta:guardarTrabajador'%}" method="post">
+        {%csrf_token%}
+        <fieldset >
+          <legend>Agregar un nuevo empleado</legend>
+          <div class="mb-3">
+            <label  class="form-label">Cedula</label>
+            <input type="number" name="cedula" class="form-control" >
+          </div>
+          <div class="mb-3">
+            <label  class="form-label">Nombre</label>
+            <input type="text" name="nombre" class="form-control" >
+          </div>
+          <div class="mb-3">
+            <label  class="form-label">Apellido</label>
+            <input type="text" name="apellido" class="form-control" >
+          </div>
+          <div class="mb-3">
+            <label  class="form-label">Fecha nacimiento</label>
+            <input type="date" name="fechaNacimiento" class="form-control" >
+          </div>
+          <div class="mb-3">
+            <label  class="form-label">Correo</label>
+            <input type="Email" name="correo" class="form-control" >
+          </div>
+          
+
+          <button type="submit" class="btn btn-primary">Enviar</button>
+        </fieldset>
+      </form>
+    {%endblock%}    
+    
+</body>
+</html>

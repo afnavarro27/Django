@@ -8,7 +8,7 @@ from django.db import models
 class Trabajador(models.Model):
     cedula = models.IntegerField()
     nombre = models.CharField(max_length=200)
-    apellido= models.CharField(max_length=200)
+    apellido = models.CharField(max_length=200)
     fechaNacimiento = models.DateField()
     correo = models.EmailField(max_length=250,null=True,blank=True)
 
